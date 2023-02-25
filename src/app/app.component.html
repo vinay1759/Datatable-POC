@@ -1,17 +1,12 @@
-<!-- <p-table [columns]="cols" [value]="cars">
-  <ng-template pTemplate="header" let-columns>
-      <tr>
-          <th *ngFor="let col of columns">
-              {{col.header}}
-          </th>
-      </tr>
-  </ng-template>
-  <ng-template pTemplate="body" let-car let-columns="columns">
-      <tr>
-          <td *ngFor="let col of columns">
-                  {{car[col.field]}}
-          </td>
-      </tr>
-  </ng-template>
-</p-table> -->
-<p>hello</p>
+<!-- Button to clear selection -->
+<button (click)="clearSelection()">Clear Selection</button>
+<!-- AG Grid Angular Component -->
+<ag-grid-angular
+   style="width: 95%; height: 90%"
+   class="ag-theme-alpine"
+   [columnDefs]="columnDefs"
+   [rowData]="rowData"
+   [rowSelection]="'multiple'"
+   [animateRows]="true"
+   (cellClicked)="onCellClicked($event)"
+ ></ag-grid-angular>
